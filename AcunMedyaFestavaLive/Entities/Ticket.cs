@@ -8,6 +8,8 @@ namespace AcunMedyaFestavaLive.Entities
     public class Ticket
     {
         public int TicketID { get; set; }
+        public int ArtistId { get; set; }
+        public int UserId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string TicketProperty1 { get; set; }
@@ -17,5 +19,6 @@ namespace AcunMedyaFestavaLive.Entities
         public string TicketProperty5 { get; set; }
         public string TicketProperty6 { get; set; }
         public decimal Price { get; set; }
+        
     }
 }

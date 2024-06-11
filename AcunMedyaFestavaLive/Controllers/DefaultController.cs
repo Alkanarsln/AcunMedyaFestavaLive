@@ -1,14 +1,18 @@
-﻿using System;
+﻿using AcunMedyaFestavaLive.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using System.Web;
 using System.Web.Mvc;
 
 namespace AcunMedyaFestavaLive.Controllers
 {
+    
     public class DefaultController : Controller
     {
-        // GET: Default
+        Context context = new Context();
+        
         public ActionResult Index()
         {
             return View();
@@ -48,7 +52,8 @@ namespace AcunMedyaFestavaLive.Controllers
         }
         public PartialViewResult PartialTicket()
         {
-            return PartialView();
+            var values = context.Tickets.ToList();
+            return PartialView(values);
         }
         public PartialViewResult PartialContact()
         {

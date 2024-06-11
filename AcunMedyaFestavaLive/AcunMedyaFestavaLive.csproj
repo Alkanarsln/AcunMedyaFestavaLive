@@ -127,19 +127,44 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\LayoutController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TicketController.cs" />
+    <Compile Include="Areas\Member\Controllers\MyTicketController.cs" />
+    <Compile Include="Areas\Member\MemberAreaRegistration.cs" />
+    <Compile Include="Controllers\AdminLayoutController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\FestavaArtistController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Entities\Artist.cs" />
     <Compile Include="Entities\Context.cs" />
     <Compile Include="Entities\Feature.cs" />
+    <Compile Include="Entities\OperationClaim.cs" />
     <Compile Include="Entities\Ticket.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\UserOperationClaim.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202404221839364_mig1.cs" />
     <Compile Include="Migrations\202404221839364_mig1.designer.cs">
       <DependentUpon>202404221839364_mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202405061723391_mig2.cs" />
+    <Compile Include="Migrations\202405061723391_mig2.designer.cs">
+      <DependentUpon>202405061723391_mig2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406111436095_mig3.cs" />
+    <Compile Include="Migrations\202406111436095_mig3.designer.cs">
+      <DependentUpon>202406111436095_mig3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406112038223_mig4.cs" />
+    <Compile Include="Migrations\202406112038223_mig4.designer.cs">
+      <DependentUpon>202406112038223_mig4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406112151134_mig5.cs" />
+    <Compile Include="Migrations\202406112151134_mig5.designer.cs">
+      <DependentUpon>202406112151134_mig5.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -155,6 +180,17 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Ticket\TicketList.cshtml" />
+    <Content Include="Areas\Admin\Views\Ticket\CreateTicket.cshtml" />
+    <Content Include="Areas\Admin\Views\Ticket\UpdateTicket.cshtml" />
+    <Content Include="Areas\Member\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\Layout\PartialHead.cshtml" />
+    <Content Include="Areas\Admin\Views\Layout\PartialNavbar.cshtml" />
+    <Content Include="Areas\Admin\Views\Layout\PartialSidebar.cshtml" />
+    <Content Include="Areas\Admin\Views\Layout\PartialScript.cshtml" />
+    <Content Include="Areas\Admin\Views\Ticket\TicketDetail.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -184,6 +220,47 @@
     <Content Include="Templates\FestavaLive-1.0.0\js\jquery.sticky.js" />
     <Content Include="Templates\FestavaLive-1.0.0\ticket.html" />
     <Content Include="Templates\FestavaLive-1.0.0\video\pexels-2022395.mp4" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\css\bootstrap.min.css" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\css\demo.css" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\css\ready.css" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\css\ready.min.css" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\fonts\line-awesome.svg" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\img\menu.png" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\img\menu2.png" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\img\profile.jpg" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\img\profile2.jpg" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\core\bootstrap.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\core\jquery.3.2.1.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\core\popper.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\demo.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\bootstrap-notify\bootstrap-notify.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\bootstrap-toggle\bootstrap-toggle.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\chart-circle\circles.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\chartist\chartist.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\chartist\plugin\chartist-plugin-tooltip.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\jquery.mapael.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\maps\france_departments.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\maps\france_departments.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\maps\README.txt" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\maps\usa_states.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\maps\usa_states.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\maps\world_countries.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\maps\world_countries.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\maps\world_countries_mercator.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\maps\world_countries_mercator.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\maps\world_countries_miller.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-mapael\maps\world_countries_miller.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-scrollbar\jquery.scrollbar.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\plugin\jquery-ui-1.12.1.custom\jquery-ui.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\ready.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\js\ready.min.js" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\components.html" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\forms.html" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\icons.html" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\index.html" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\notifications.html" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\tables.html" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\typography.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -213,9 +290,52 @@
     <Content Include="Views\Default\PartialFooter.cshtml" />
     <Content Include="Views\FestavaArtist\ArtistList.cshtml" />
     <Content Include="Views\Shared\UILayout.cshtml" />
+    <Content Include="Views\AdminLayout\Index.cshtml" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\.DS_Store" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\css\ready.css.map" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\fonts\line-awesome.eot" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\fonts\line-awesome.ttf" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\fonts\line-awesome.woff" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\fonts\line-awesome.woff2" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_alerts.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_badges.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_buttons.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_cards.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_charts.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_dropdowns.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_inputs.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_maps.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_modals.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_navbars.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_navpills.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_navsearch.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_paginations.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_sliders.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\components\_tables.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\plugins\_chartist.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\plugins\_jqueryscrollbar.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\plugins\_jqueryui.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\plugins\_toggle.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\_background.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\_components.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\_layouts.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\_line-awesome.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\_outlinefocus.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\_plugins.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\_responsive.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\_typography.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\assets\sass\ready\_variables.scss" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\LICENSE" />
+    <Content Include="Templates\Ready-Bootstrap-Dashboard-master\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Member\Data\" />
+    <Folder Include="Areas\Member\Views\MyTicket\" />
+    <Folder Include="Areas\Member\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -234,6 +354,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202404221839364_mig1.resx">
       <DependentUpon>202404221839364_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405061723391_mig2.resx">
+      <DependentUpon>202405061723391_mig2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406111436095_mig3.resx">
+      <DependentUpon>202406111436095_mig3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406112038223_mig4.resx">
+      <DependentUpon>202406112038223_mig4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406112151134_mig5.resx">
+      <DependentUpon>202406112151134_mig5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
