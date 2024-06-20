@@ -44,7 +44,10 @@ namespace AcunMedyaFestavaLive.Controllers
                 UserDal userDal = new UserDal();
                 var claims = userDal.GetClaims(user);
                 var firstClaim = claims.FirstOrDefault();
-
+                Session["UserId"] = user.UserID;
+                Session["UserName"] = user.UserName;
+                Session["ImageUrl"] = user.ImageUrl;
+                Session["OperationClaimName"] = firstClaim?.ClaimName;
                 if (firstClaim != null)
                 {
                     if (firstClaim.OperationClaimID == 1)
@@ -58,7 +61,10 @@ namespace AcunMedyaFestavaLive.Controllers
                 }
             }
 
-
+            ViewBag.UserName = Session["UserName"];
+            ViewBag.UserId = Session["UserId"];
+            ViewBag.ImageUrl = Session["ImageUrl"];
+            ViewBag.OperationClaimName = Session["OperationClaimName"];
             return View();
 
         }

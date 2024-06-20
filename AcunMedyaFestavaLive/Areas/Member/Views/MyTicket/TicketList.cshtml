@@ -1,6 +1,7 @@
-﻿@model List<AcunMedyaFestavaLive.Areas.Member.Models.UserTicketViewModel>
+﻿@model List<AcunMedyaFestavaLive.Entities.Ticket>
 @{
-    Layout = "/Areas/Member/Views/Shared/_MemberLayout.cshtml";
+    ViewBag.Title = "TicketList";
+    Layout = "~/Areas/Member/Views/Shared/_MemberLayout.cshtml";
 }
 
 <div class="content">
@@ -10,31 +11,33 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">Biletlerim</div>
+                        <div class="card-title">Satışta ki Biletlerin Listesi</div>
                     </div>
                     <div class="card-body">
                         <div class="card-sub">
-                            Aşağıda Ki Tabloda Kendinize Ait biletleri görebilirsiniz.
+                            Bilet Bilgisi ile ilgili işlemleri aşağıdaki panelden yapabilirsiniz
                         </div>
                         <table class="table mt-3">
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Bilet Başlığı</th>
+                                    <th>Bilet Türü</th>
                                     <th>Bilet Açıklaması</th>
                                     <th>Bilet Fiyatı</th>
                                     <th>Detaylar</th>
+                                    <th>Satın Al</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (var item in Model)
                                 {
                                     <tr>
-                                        <td>@item.TicketId</td>
+                                        <td>@item.TicketID</td>
                                         <td>@item.Title</td>
                                         <td>@item.Description</td>
                                         <td>@item.Price</td>
-                                        <td><a href="/Member/MyTicket/TicketDetail/@item.TicketId" class="btn btn-info">Detaylar</a></td>
+                                        <td><a href="/Member/Ticket/TicketDetail/@item.TicketID" class="btn btn-info">Detaylar</a></td>
+                                        <td><a href="/Member/Ticket/BuyTicket/@item.TicketID" class="btn btn-info">Satın Al</a></td>
                                     </tr>
                                 }
 

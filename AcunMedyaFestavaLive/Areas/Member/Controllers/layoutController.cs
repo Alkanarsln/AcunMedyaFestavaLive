@@ -1,15 +1,13 @@
-﻿using AcunMedyaFestavaLive.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace AcunMedyaFestavaLive.Areas.Admin.Controllers
+namespace AcunMedyaFestavaLive.Areas.Member.Controllers
 {
-    public class LayoutController : Controller
+    public class layoutController : Controller
     {
-        Context context = new Context();
         public PartialViewResult PartialHead()
         {
             return PartialView();

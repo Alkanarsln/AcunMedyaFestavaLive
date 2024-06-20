@@ -15,6 +15,7 @@ namespace AcunMedyaFestavaLive.Entities
         public DbSet<OperationClaim> OperationClaims { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
         public DbSet<UserTicket> UserTickets { get; set; }
+        public DbSet<Message> Messages { get; set; }
 
     }
 }
