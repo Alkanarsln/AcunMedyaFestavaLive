@@ -54,7 +54,7 @@ namespace AcunMedyaFestavaLive.Controllers
         }
         public PartialViewResult PartialTicket()
         {
-            var values = context.Tickets.ToList();
+            var values = context.Tickets.Where(x => x.Status == true).OrderBy(x => x.TicketID).Take(4).ToList();  
             return PartialView(values);
         }
         [HttpGet]

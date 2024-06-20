@@ -1,4 +1,5 @@
-﻿@model List<AcunMedyaFestavaLive.Areas.Member.Models.UserTicketViewModel>
+﻿
+@model List<AcunMedyaFestavaLive.Areas.Member.Models.UserTicketViewModel>
 @{
     Layout = "/Areas/Member/Views/Shared/_MemberLayout.cshtml";
 }
@@ -9,11 +10,11 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">Biletlerim</div>
+                        <div class="card-title"> Geçmiş Biletlerim</div>
                     </div>
                     <div class="card-body">
                         <div class="card-sub">
-                            Aşağıda Ki Tabloda Kendinize Ait biletleri görebilirsiniz.
+                            Aşağıda Ki Tabloda Kendinize Ait Geçmiş biletleri görebilirsiniz.
                         </div>
                         <table class="table mt-3">
                             <thead>
@@ -23,7 +24,6 @@
                                     <th>Bilet Açıklaması</th>
                                     <th>Bilet Fiyatı</th>
                                     <th>Detaylar</th>
-                                    <th>İptal Et</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -35,7 +35,6 @@
                                         <td>@item.Description</td>
                                         <td>@item.Price</td>
                                         <td><a href="/Member/MyTicket/TicketDetail/@item.TicketId" class="btn btn-info">Detaylar</a></td>
-                                        <td><a href="/Member/MyTicket/MyTicketDelete/@item.TicketId" class="btn btn-success">İptal Et</a></td>
                                     </tr>
                                 }
 
@@ -47,4 +46,6 @@
         </div>
     </div>
 </div>
+
+
 

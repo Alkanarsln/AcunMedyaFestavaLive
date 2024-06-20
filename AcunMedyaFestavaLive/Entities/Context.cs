@@ -17,5 +17,6 @@ namespace AcunMedyaFestavaLive.Entities
         public DbSet<UserTicket> UserTickets { get; set; }
         public DbSet<Message> Messages { get; set; }
 
+
     }
 }

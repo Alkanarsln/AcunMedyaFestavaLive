@@ -128,6 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ArtistController.cs" />
     <Compile Include="Areas\Admin\Controllers\LayoutController.cs" />
     <Compile Include="Areas\Admin\Controllers\MessageController.cs" />
     <Compile Include="Areas\Admin\Controllers\TicketController.cs" />
@@ -185,6 +186,18 @@
     <Compile Include="Migrations\202406200113560_mig8.designer.cs">
       <DependentUpon>202406200113560_mig8.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202406201430086_mig9.cs" />
+    <Compile Include="Migrations\202406201430086_mig9.designer.cs">
+      <DependentUpon>202406201430086_mig9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406201439468_mig10.cs" />
+    <Compile Include="Migrations\202406201439468_mig10.designer.cs">
+      <DependentUpon>202406201439468_mig10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406201623031_mig11.cs" />
+    <Compile Include="Migrations\202406201623031_mig11.designer.cs">
+      <DependentUpon>202406201623031_mig11.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -220,6 +233,13 @@
     <Content Include="Areas\Admin\Views\Message\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Message\MessageDetail.cshtml" />
     <Content Include="Areas\Admin\Views\User\UserList.cshtml" />
+    <Content Include="Areas\Admin\Views\Artist\ArtistList.cshtml" />
+    <Content Include="Areas\Admin\Views\Artist\CreateArtist.cshtml" />
+    <Content Include="Areas\Admin\Views\Artist\UpdateArtist.cshtml" />
+    <Content Include="Areas\Member\Views\MyTicket\TicketDetail.cshtml" />
+    <Content Include="Areas\Member\Views\MyTicket\BuyTicket.cshtml" />
+    <Content Include="Areas\Member\Views\MyTicket\PastMyTicketList.cshtml" />
+    <Content Include="Areas\Admin\Views\Ticket\PassiveTicketList.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -518,6 +538,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202406200113560_mig8.resx">
       <DependentUpon>202406200113560_mig8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406201430086_mig9.resx">
+      <DependentUpon>202406201430086_mig9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406201439468_mig10.resx">
+      <DependentUpon>202406201439468_mig10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406201623031_mig11.resx">
+      <DependentUpon>202406201623031_mig11.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

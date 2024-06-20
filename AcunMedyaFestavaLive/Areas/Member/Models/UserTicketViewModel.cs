@@ -13,6 +13,7 @@ namespace AcunMedyaFestavaLive.Areas.Member.Models
         public decimal Price { get; set; }
         public int UserId { get; set; }
         public int UserTicketId { get; set; }
+        public bool Status { get; set; }
 
     }
 }

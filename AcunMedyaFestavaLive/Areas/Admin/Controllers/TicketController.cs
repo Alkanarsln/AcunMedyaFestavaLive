@@ -14,7 +14,13 @@ namespace AcunMedyaFestavaLive.Areas.Admin.Controllers
         
         public ActionResult TicketList()
         {
-            var values = context.Tickets.ToList();
+            var values = context.Tickets.Where(x => x.Status == true).ToList(); 
+            return View(values);
+        }
+
+        public ActionResult PassiveTicketList()
+        {
+            var values = context.Tickets.Where(x => x.Status == false).ToList();
             return View(values);
         }
         [HttpGet]
@@ -25,6 +31,7 @@ namespace AcunMedyaFestavaLive.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult CreateTicket(Ticket ticket)
         {
+            ticket.Status = true;
             context.Tickets.Add(ticket);
             context.SaveChanges();
             return RedirectToAction("TicketList");
@@ -63,6 +70,22 @@ namespace AcunMedyaFestavaLive.Areas.Admin.Controllers
         {
            var values = context.Tickets.Find(id);
             return View(values);
+        }
+
+        public ActionResult MakeActive(int id)
+        {
+            var value = context.Tickets.Find(id);
+            value.Status = true;
+            context.SaveChanges();
+            return RedirectToAction("TicketList");
+        }
+
+        public ActionResult MakePassive(int id)
+        {
+            var value = context.Tickets.Find(id);
+            value.Status = false;
+            context.SaveChanges();
+            return RedirectToAction("TicketList");
         }
     }
 }

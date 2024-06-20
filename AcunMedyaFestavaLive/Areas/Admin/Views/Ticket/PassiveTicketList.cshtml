@@ -25,27 +25,26 @@
                                     <th>Sil</th>
                                     <th>Güncelle</th>
                                     <th>Detaylar</th>
-                                    <th>Pasif Yap</th>
+                                    <th>Aktif Yap</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (var item in Model)
                                 {
-                                
-                                <tr>
-                                    <td>@item.TicketID</td>
-                                    <td>@item.Title</td>
-                                    <td>@item.Price</td>
-                                    <td><a href="/Admin/Ticket/DeleteTicket/@item.TicketID" class="btn btn-danger">Sil</a></td>
-                                    <td><a href="/Admin/Ticket/UpdateTicket/@item.TicketID" class="btn btn-success">Güncelle</a></td>
-                                    <td><a href="/Admin/Ticket/TicketDetail/@item.TicketID" class="btn btn-info">Detaylar</a></td>
-                                    <td><a href="/Admin/Ticket/MakePassive/@item.TicketID" class="btn btn-outline-secondary">Pasif Yap</a></td>
-                                </tr>
+
+                                    <tr>
+                                        <td>@item.TicketID</td>
+                                        <td>@item.Title</td>
+                                        <td>@item.Price</td>
+                                        <td><a href="/Admin/Ticket/DeleteTicket/@item.TicketID" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Admin/Ticket/UpdateTicket/@item.TicketID" class="btn btn-success">Güncelle</a></td>
+                                        <td><a href="/Admin/Ticket/TicketDetail/@item.TicketID" class="btn btn-info">Detaylar</a></td>
+                                        <td><a href="/Admin/Ticket/MakeActive/@item.TicketID" class="btn btn-outline-secondary">Aktif Yap</a></td>
+                                    </tr>
                                 }
 
                             </tbody>
                         </table>
-                        <a href="/Admin/Ticket/CreateTicket/" class="btn btn-info">Yeni Bilet Girişi</a>
                     </div>
                 </div>
             </div>

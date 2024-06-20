@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "TicketList";
     Layout = "~/Areas/Member/Views/Shared/_MemberLayout.cshtml";
+
 }
 
 <div class="content">
@@ -25,24 +26,24 @@
                                     <th>Bilet Açıklaması</th>
                                     <th>Bilet Fiyatı</th>
                                     <th>Detaylar</th>
-                                    <th>Satın Al</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (var item in Model)
                                 {
+                                    
                                     <tr>
                                         <td>@item.TicketID</td>
                                         <td>@item.Title</td>
                                         <td>@item.Description</td>
                                         <td>@item.Price</td>
-                                        <td><a href="/Member/Ticket/TicketDetail/@item.TicketID" class="btn btn-info">Detaylar</a></td>
-                                        <td><a href="/Member/Ticket/BuyTicket/@item.TicketID" class="btn btn-info">Satın Al</a></td>
+                                        <td><a href="/Member/MyTicket/TicketDetail/@item.TicketID" class="btn btn-info">Detaylar</a></td>
+
                                     </tr>
                                 }
-
                             </tbody>
                         </table>
+                        <a href="/Member/MyTicket/BuyTicket/" class="btn btn-success">Satın Al</a>
                     </div>
                 </div>
             </div>
