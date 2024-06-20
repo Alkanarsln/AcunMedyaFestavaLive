@@ -34,7 +34,8 @@ namespace AcunMedyaFestavaLive.Controllers
 
         public PartialViewResult PartialFeature()
         {
-            return PartialView();
+            var values = context.Features.ToList();
+            return PartialView(values);
         }
 
         public PartialViewResult PartialAbout()
@@ -44,7 +45,8 @@ namespace AcunMedyaFestavaLive.Controllers
 
         public PartialViewResult PartialMeetArtist()
         {
-            return PartialView();
+            var values = context.Artists.OrderBy(x => x.ArtistID).Take(4).ToList();
+            return PartialView(values);
         }
         public PartialViewResult PartialEventSchedule()
         {
@@ -55,9 +57,18 @@ namespace AcunMedyaFestavaLive.Controllers
             var values = context.Tickets.ToList();
             return PartialView(values);
         }
+        [HttpGet]
         public PartialViewResult PartialContact()
         {
             return PartialView();
+        }
+
+        [HttpPost]
+        public ActionResult PartialContact(Message message)
+        {
+            context.Messages.Add(message);
+            context.SaveChanges();
+            return RedirectToAction("Index");
         }
         public PartialViewResult PartialFooter()
         {

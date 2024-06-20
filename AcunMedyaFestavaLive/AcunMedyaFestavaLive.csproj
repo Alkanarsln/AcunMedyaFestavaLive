@@ -129,7 +129,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\LayoutController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MessageController.cs" />
     <Compile Include="Areas\Admin\Controllers\TicketController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Member\Controllers\layoutController.cs" />
     <Compile Include="Areas\Member\Controllers\MyTicketController.cs" />
     <Compile Include="Areas\Member\MemberAreaRegistration.cs" />
@@ -137,7 +139,6 @@
     <Compile Include="Controllers\AdminLayoutController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
-    <Compile Include="Controllers\FestavaArtistController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DataAccess\UserDal.cs" />
     <Compile Include="Entities\Artist.cs" />
@@ -216,6 +217,9 @@
     <Content Include="Areas\Member\Views\layout\PartialSidebar.cshtml" />
     <Content Include="Areas\Member\Views\layout\PartialScript.cshtml" />
     <Content Include="Areas\Member\Views\MyTicket\TicketList.cshtml" />
+    <Content Include="Areas\Admin\Views\Message\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Message\MessageDetail.cshtml" />
+    <Content Include="Areas\Admin\Views\User\UserList.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -329,7 +333,6 @@
     <Content Include="Views\Default\PartialTicket.cshtml" />
     <Content Include="Views\Default\PartialContact.cshtml" />
     <Content Include="Views\Default\PartialFooter.cshtml" />
-    <Content Include="Views\FestavaArtist\ArtistList.cshtml" />
     <Content Include="Views\Shared\UILayout.cshtml" />
     <Content Include="Views\AdminLayout\Index.cshtml" />
     <Content Include="Templates\Ready-Bootstrap-Dashboard-master\.DS_Store" />
